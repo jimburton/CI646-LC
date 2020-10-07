@@ -38,9 +38,9 @@ Boolean values, if statements, loops, lists and other data structures, and so on
 Given that λC is so simple, this has always struck me as pretty incredible!
 A programming language built up from first principles in this way is called a
 *Church encoding*. Our two ways of reducing expressions represent computation
-("running" the program) and a term that can’t be reduced any more is the
-result of the program. (An expression that can’t be reduced any more is said
-to be in normal form.) 
+("running" the "program") and a term that can’t be reduced any more is the
+"result" of the "program". (An expression that can’t be reduced any more is said
+to be in *normal form*.) 
 
 The idea is to express the *behaviour* of PL constructs,
 such as numbers or conditional statements etc, in the *structure* of λ-terms.
