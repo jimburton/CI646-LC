@@ -9,7 +9,7 @@ and there is also a short refresher below.
 This is an expression in the λC: `(λx.y x) y`. 
 
 The part within brackets, `(λx.y x)`,
-is a lambda expression. In this expression, `x` is a *bound* variable because 
+is a lambda binding (we know that because of the λ). In this expression, `x` is a *bound* variable because 
 it appears in a lambda binding (`λx`). Because `y` does not appear in a lambda binding,
 it is a *free* variable. The lambda expression requires a single argument, the `x`
 referred to in the binding, and it will take whatever is to the right of it as that
