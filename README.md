@@ -122,6 +122,8 @@ Click on `program.txt` in the left sidebar to see the list of these. Look at the
 numbers, called *Church numerals*. A Church numeral is a λ expression that takes two arguments, say
 `f` and `x`. The Church numeral `n` applies `f` to `x` `n` times. So 'zero' applies `f` to `x`
 zero times, "one" does it once, and so on: `zero ≡ λf.λx.x`, `one ≡ λf.λx.f x`, `two ≡ λf.λx.f (f x)`, 
-and so on. Define a macro that decrements a Church numeral and use that to define a subtraction macro. Church numerals
-are "natural" numbers, so there are no negative values -- one less than zero is just zero, as is `n-m`
+and so on. Define a macro, `PRED`, that decrements a Church numeral and use that to define a subtraction macro, `SUB`. 
+Church numerals are "natural" numbers, so there are no negative values -- one less than zero is just zero, as is `n-m`
 where `m` is greater than `n`.
+
+You can read more about Church encoding here: https://en.wikipedia.org/wiki/Church_encoding.
