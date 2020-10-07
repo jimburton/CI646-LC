@@ -80,7 +80,7 @@ for `p` and some other λ expressions for `x` and `y` (or just the atoms `x` and
 legitimate λ expressions) then reduce the expression as far as you can.
 
 1. Write a λ expression equivalent to logical negation, or `not`. That
-is, `not true` returns `false` and `not false` returns true. The argument
+is, `not true` returns `false` and `not false` returns `true`. The argument
 to `not`, say `p`, can be reduced to a Church Boolean, so `not` is a λ function that takes two
 arguments (more properly, a λ function that takes one argument, as they all do, and returns a function
 that takes one argument). The result of calling `not p` should be a Church Boolean. Make use of the fact that 
