@@ -84,11 +84,18 @@ solutions.
 
 1. Write a λ expression equivalent to logical negation, or `not`. That
 is, `not true` returns `false` and `not false` returns `true`. The argument
-to `not`, say `p`, can be reduced to a Church Boolean, so `not` is a λ function that takes two
-arguments (more properly, a λ function that takes one argument, as they all do, and returns a function
-that takes one argument). The result of calling `not p` should be a Church Boolean. Make use of the fact that 
+to `not`, say `p`, can be reduced to a Church Boolean, so `not` is a λ function that takes one
+argument (more properly, all λ functions take one argument and to represent functions that take more
+than one argument we create functions
+that return other functions expecting more arguments). The result of calling `not p` should be a Church Boolean. Make use of the fact that 
 when `p` is equivalent to `true` (as defined above), it’s going to return its first argument,
 otherwise it will return its second.
+
+```
+not ≡ λ b . b (λ x y . y) (λ x y . x)
+```
+
+So, if `b` ("boolean") is equivalent to `true` it will return its first argument, which is the expression for `false`, and vice versa.
 
 
 2. Write a λ expression equivalent to logical conjunction, `and`. That
@@ -96,9 +103,23 @@ is, a λ expression that takes two expressions that can be reduced to Church Boo
 returns the Church Boolean `true` if and only if they are both equivalent to `true`. Otherwise, it 
 returns `false`.
 
+```
+and ≡ λ x y . x y x
+```
+
+If `x` is equivalent to `true` it will return its first argument, `y`. So in this case the result of the whole thing is the same as `y`.
+If `x` is `false`, the whole thing is `false` so we return `x`. 
+
 3. Write a λ expression equivalent to logical disjunction, `or`. That
 is, a λ expression that takes two expressions that can be reduced to Church Booleans and returns the
 Church Boolean `true` if either of them is equivalent to `true`. Otherwise, it returns `false`.
+
+```
+or ≡ λ x y . x x y
+```
+
+If `x` is equivalent to `true` the whole thing is `true` so we return `x`. Otherwise the whole thing is `true` if and only if `y` is true, 
+so we return `y`.
 
 
 ## A REPL for λC
@@ -117,13 +138,13 @@ its first argument is `true`. Was the result what you expected?
 "NOT = ..." and so on. Now you can call your macros and reduce them
 with suitable arguments to check that they do what you expect.
 
-5. Finally, this REPL comes with many useful macros predefined.
+5. Finally, note that this REPL comes with many useful macros predefined.
 Click on `program.txt` in the left sidebar to see the list of these. Look at the definition of
 numbers, called *Church numerals*. A Church numeral is a λ expression that takes two arguments, say
 `f` and `x`. The Church numeral `n` applies `f` to `x` `n` times. So 'zero' applies `f` to `x`
 zero times, "one" does it once, and so on: `zero ≡ λf.λx.x`, `one ≡ λf.λx.f x`, `two ≡ λf.λx.f (f x)`, 
-and so on. Define a macro, `PRED`, that decrements a Church numeral and use that to define a subtraction macro, `SUB`. 
-Church numerals are "natural" numbers, so there are no negative values -- one less than zero is just zero, as is `n-m`
+and so on. Church numerals are "natural" numbers, so there are no negative values -- one less than zero is just zero, as is `n-m`
 where `m` is greater than `n`.
 
-You can read more about Church encoding here: https://en.wikipedia.org/wiki/Church_encoding.
+    Use the definitions of Church numerals and arithmetic here: https://en.wikipedia.org/wiki/Church_encoding to define
+    the PRED (the predecessor of a numeral) and SUB (subtraction) macros.
