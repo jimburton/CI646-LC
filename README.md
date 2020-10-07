@@ -113,8 +113,8 @@ Note that the leftmost expression is the `if` statement from above and
 its first argument is `true`. Was the result what you expected?
 
 4. Enter your definitions of `not`, `and` and `or` from above as "macros" by entering
-"NOT = ..." and so on. Now you can call your macros and reduce them
-with suitable arguments to check that they do what you expect.
+"NOT = ..." and so on. Macros have to be declared using capital letters. Call your macros with suitable arguments 
+to check that they do what you expect.
 
 5. Finally, note that this REPL comes with many useful macros predefined.
 Click on `program.txt` in the left sidebar to see the list of these. Look at the definition of
