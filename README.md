@@ -79,6 +79,9 @@ Make sure you understand this! With a pencil and paper, try substituting `true` 
 for `p` and some other λ expressions for `x` and `y` (or just the atoms `x` and `y`, as these are 
 legitimate λ expressions) then reduce the expression as far as you can.
 
+After you solve the problems below switch to the `solution` branch of this repository to see my
+solutions.
+
 1. Write a λ expression equivalent to logical negation, or `not`. That
 is, `not true` returns `false` and `not false` returns `true`. The argument
 to `not`, say `p`, can be reduced to a Church Boolean, so `not` is a λ function that takes two
@@ -116,9 +119,9 @@ with suitable arguments to check that they do what you expect.
 
 5. Finally, this REPL comes with many useful macros predefined.
 Click on `program.txt` in the left sidebar to see the list of these. Look at the definition of
-numbers, called Church numerals. A Church numeral is a λ expression that takes two arguments, say
+numbers, called *Church numerals*. A Church numeral is a λ expression that takes two arguments, say
 `f` and `x`. The Church numeral `n` applies `f` to `x` `n` times. So 'zero' applies `f` to `x`
-zero times, "one" does it once, and so on: `λf.λx.x`, `λf.λx.f x`, `λf.λx.f (f x)`...Define 
-a macro that decrements a Church numeral and use that to define a subtraction macro. Church numerals
+zero times, "one" does it once, and so on: `zero ≡ λf.λx.x`, `one ≡ λf.λx.f x`, `two ≡ λf.λx.f (f x)`, 
+and so on. Define a macro that decrements a Church numeral and use that to define a subtraction macro. Church numerals
 are "natural" numbers, so there are no negative values -- one less than zero is just zero, as is `n-m`
 where `m` is greater than `n`.
