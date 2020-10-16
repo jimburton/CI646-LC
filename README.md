@@ -57,8 +57,8 @@ false ≡ λ x y . y
 ```
 
 This might seem like an arbitrary setup -- why not the other way round? But Boolean logic is simply
-a "world" in which there are exactly two possible values, and these expressions provide a
-model of that.
+a "world" in which there are exactly two possibilities, and these expressions provide a
+model of that. 
 
 We can use these Church Booleans to create an if statement. In any programming language
 an "if" statement such as **if p then x else y** has three parts: `p`, an expression that can be 
